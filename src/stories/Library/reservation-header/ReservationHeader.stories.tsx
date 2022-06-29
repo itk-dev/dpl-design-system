@@ -10,8 +10,8 @@ export default {
   parameters: {},
 } as ComponentMeta<typeof ReservationHeaderSB>;
 
-const Template: ComponentStory<typeof ReservationHeaderSB> = (args) => (
-  <ReservationHeaderSB {...args} />
+const Template: ComponentStory<typeof ReservationHeaderSB> = () => (
+  <ReservationHeaderSB />
 );
 
 export const ReservationHeader = Template.bind({});
