@@ -1,3 +1,4 @@
+import React from "react";
 import { withDesign } from "storybook-addon-designs";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ListEmpty as ListEmptySB } from "./ListEmpty";
@@ -17,9 +18,8 @@ export default {
   },
 } as ComponentMeta<typeof ListEmptySB>;
 
-const Template: ComponentStory<typeof ListEmptySB> = (args) => (
-  <ListEmptySB {...args} />
+const Template: ComponentStory<typeof ListEmptySB> = () => (
+  <ListEmptySB />
 );
 
 export const ListEmpty = Template.bind({});
-
