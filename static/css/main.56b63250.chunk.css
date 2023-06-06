@@ -2931,7 +2931,7 @@ a.cover {
     margin-top: 16px;
     overflow: hidden;
     text-overflow: ellipsis;
-    min-height: 30px;
+    line-height: calc(120% + 2px);
   }
 }
 
@@ -3356,7 +3356,6 @@ dl.list-description dd .link-tag {
 }
 
 .dpl-list-empty {
-  height: 100%;
   width: 100%;
   background-color: transparent;
   display: flex;
@@ -3756,6 +3755,7 @@ dl.list-description dd .link-tag {
 .modal-loan {
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .modal-loan__container {
@@ -3822,15 +3822,19 @@ dl.list-description dd .link-tag {
   width: 100%;
   display: flex;
   justify-content: center;
+  justify-content: flex-start;
 }
 .modal-login--authenticated {
   align-items: baseline;
 }
+.modal-login--anonymous {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .modal-login__container {
-  display: grid;
-  place-content: center;
-  grid-row-gap: 28px;
-  row-gap: 28px;
+  justify-content: flex-start;
+  width: 100%;
 }
 .modal-login__btn-create-profile {
   justify-self: center;
@@ -3988,12 +3992,12 @@ dl.list-description dd .link-tag {
   padding: 0;
   flex-direction: column;
 }
-.modal-profile__notifications {
+.modal-profile__notifications:has[div] {
   border-bottom: 1px solid #dbdbdb;
   padding: 32px;
 }
 @media (min-width: 768px) {
-  .modal-profile__notifications {
+  .modal-profile__notifications:has[div] {
     padding-top: 40px;
     padding-right: 80px;
     padding-bottom: 40px;
@@ -4018,26 +4022,22 @@ dl.list-description dd .link-tag {
   justify-content: space-between;
   padding: 32px;
 }
-@media (min-width: 768px) {
-  .modal-profile__container {
-    padding-top: 40px;
-    padding-right: 80px;
-    padding-bottom: 40px;
-    padding-left: 80px;
-  }
-}
 .modal-profile__links .link-filters {
   display: flex;
   flex-direction: column;
   grid-row-gap: 24px;
   row-gap: 24px;
 }
-.modal-profile__btn-logout button {
-  width: 100%;
+.modal-profile__btn-logout {
+  margin: 0 32px;
 }
 @media (min-width: 768px) {
   .modal-profile__btn-logout {
-    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .modal-profile__btn-logout a {
+    width: 200px;
   }
 }
 
@@ -4552,6 +4552,18 @@ dl.list-description dd .link-tag {
   }
 }
 
+.dashboard-page {
+  background: #f6f5f0;
+  padding: 16px;
+  position: -webkit-sticky;
+  position: sticky;
+}
+@media (min-width: 1024px) {
+  .dashboard-page {
+    padding: 112px;
+  }
+}
+
 .dpl-patron-page {
   background: #f6f5f0;
   padding: 16px;
@@ -4985,30 +4997,30 @@ dl.list-description dd .link-tag {
   color: inherit;
 }
 
-.intermediate-list-page {
+.fee-list-page {
   background: #f6f5f0;
   padding: 16px;
 }
 @media (min-width: 1024px) {
-  .intermediate-list-page {
+  .fee-list-page {
     padding: 112px;
   }
 }
 
-.intermediate-list-bottom {
+.fee-list-bottom {
   display: flex;
   flex-direction: row;
 }
 
-.intermediate-list-bottom__paymenttypes {
+.fee-list-bottom__paymenttypes {
   flex: 1 1;
 }
 
-.intermediate-list-bottom__actions > p {
+.fee-list-bottom__actions > p {
   text-align: right;
 }
 
-.intermediate-list-bottom__actions > button {
+.fee-list-bottom__actions > button {
   margin-left: auto;
 }
 
@@ -5655,9 +5667,11 @@ dl.list-description dd .link-tag {
   grid-column-gap: 25px;
   -webkit-column-gap: 25px;
           column-gap: 25px;
+  align-items: unset;
 }
 @media (min-width: 768px) {
   .status-userprofile {
+    align-items: baseline;
     flex-direction: row;
     grid-row-gap: 25px;
     row-gap: 25px;
@@ -6169,4 +6183,4 @@ border-primary-white {
 /*# sourceMappingURL=base.css.map */
 
 
-/*# sourceMappingURL=main.1f645311.chunk.css.map*/
+/*# sourceMappingURL=main.56b63250.chunk.css.map*/
